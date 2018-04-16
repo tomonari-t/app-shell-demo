@@ -2,7 +2,9 @@
 
 ## How to deploy
 
+You need `now` of npm package to deploy.
+
 ```sh
-% npm install
+% npm install now -g
 $ now
 ```
