@@ -8,7 +8,7 @@ const fileToCacheList = [
 
 const addCache = (event) => {
   console.log('SW Insalled');
-  event.waitUntil(async (() => {
+  event.waitUntil((async () => {
     console.log('Cached App');
     const cache = await caches.open(cacheName)
     return cache.addAll(fileToCacheList);
@@ -18,9 +18,9 @@ const addCache = (event) => {
 const removeOldCache =  (event) => {
   console.log('SW Activated');
   const cacheWhiteList = [cacheName];
-  event.waitUntil(async (() => {
-    const keys = await cahces.keys();
-    return Promise.all(
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    Promise.all(
       keys.map((key) => {
         if (cacheWhiteList.indexOf(key) === -1) {
           return caches.delete(key);
@@ -32,7 +32,7 @@ const removeOldCache =  (event) => {
 
 const returnCacheIfExist = (event) => {
   console.log('SW fetching');
-  event.respondWith(async (() => {
+  event.respondWith((async () => {
     const matched = await caches.match(event.request, { ignoreSearch: true });
     return matched || fetch(event.request);
   })());  
