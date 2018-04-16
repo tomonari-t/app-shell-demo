@@ -1,0 +1,32 @@
+html, body {
+  min-height: 100vh;
+  height: 100vh;
+}
+
+.loader {
+  text-align: center;
+  line-height: 80vh;
+  background-color: rgba(0,0,0,.06);
+  width: 95%;
+  height: 80vh;
+  margin: 0 auto 5vh;
+}
+
+.hide {
+  display: none;
+}
+
+.page-content {
+  padding: 20px 0;
+}
+
+.demo-card-wide.mdl-card {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('https://picsum.photos/900/300') center / cover;
+}
